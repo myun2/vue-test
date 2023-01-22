@@ -2,6 +2,7 @@
   <head>
     <title>Vue Test</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
       body {
         font-family: sans-serif;
@@ -23,7 +24,9 @@
     </div>
 
     <script>
-      Vue.createApp({ data() { return { message: 'Vue Test', items: ["item1", "item2", "item3"]}}}).mount('#app')
+      axios.get("http://localhost:3000/").then(() => {
+        Vue.createApp({ data() { return { message: 'Vue Test', items: ["item1", "item2", "item3"]}}}).mount('#app')
+      });
     </script>
   </body>
 </html>
