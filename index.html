@@ -3,10 +3,12 @@
     <title>Vue Test</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <style>
+      body {
+        font-family: sans-serif;
+      }
       h1 {
         padding: 10px;
         font-size: 2.4em;
-        font-family: sans-serif;
         letter-spacing: 0.02em;
         color: #333;
       }
@@ -15,10 +17,13 @@
   <body>
     <div id="app">
       <h1>{{ message }}</h1>
+      <ul>
+        <li v-for="value in items">{{ value }}</li>
+      </ul>
     </div>
 
     <script>
-      Vue.createApp({ data() { return { message: 'Vue Test' }}}).mount('#app')
+      Vue.createApp({ data() { return { message: 'Vue Test', items: ["item1", "item2", "item3"]}}}).mount('#app')
     </script>
   </body>
 </html>
